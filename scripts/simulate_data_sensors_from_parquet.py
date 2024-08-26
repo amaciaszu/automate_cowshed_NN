@@ -1,7 +1,8 @@
 import sys
 import os
 
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+pathAbs = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+sys.path.append(pathAbs)
 import pandas as pd
 from modules.request import insert_df_to_table
 
@@ -13,7 +14,8 @@ def main():
     #####################################################
     #####################################################
     # Sensors file
-    archivo_parquet_sensors = './../data/sensors.parquet'
+    file_path_sensors = pathAbs + '\\data\\sensors.parquet'
+    df_sensors = pd.read_parquet(file_path_sensors)
 
     df_sensors = pd.read_parquet(archivo_parquet_sensors)
     # Clean dataframe
@@ -32,8 +34,8 @@ def main():
     #####################################################
 
     # Cows file
-    archivo_parquet_cows = './../data/cows.parquet'
-    df_cows = pd.read_parquet(archivo_parquet_cows)
+    file_path_cows = pathAbs + '\\data\\cows.parquet'
+    df_cows = pd.read_parquet(file_path_cows)
 
     # Clean dataframe
     # delete register with id null
@@ -54,8 +56,8 @@ def main():
     #####################################################
 
     # Measurements file
-    archivo_parquet_measurements = './../data/measurements.parquet'
-    df_measurements = pd.read_parquet(archivo_parquet_measurements)
+    file_path_measurements = pathAbs + '\\data\\measurements.parquet'
+    df_measurements = pd.read_parquet(file_path_measurements)
 
     # Clean dataframe
     # delete register with id null
