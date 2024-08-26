@@ -16,8 +16,7 @@ def main():
     # Sensors file
     file_path_sensors = pathAbs + '\\data\\sensors.parquet'
     df_sensors = pd.read_parquet(file_path_sensors)
-
-    df_sensors = pd.read_parquet(archivo_parquet_sensors)
+    
     # Clean dataframe
     # delete register with id null
     df_sensors = df_sensors[df_sensors['id'].notnull()]
