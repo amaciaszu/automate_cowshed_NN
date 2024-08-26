@@ -5,7 +5,6 @@ from modules.routers import cows, sensors, measurements, cows_measurements
 # Create FASTAPI app
 app = FastAPI()
 
-# Inicializar la base de datos
 init_db()
 
 app.include_router(cows.router)
