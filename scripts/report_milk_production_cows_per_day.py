@@ -1,3 +1,7 @@
+import sys
+import os
+
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from modules.reports import generate_report_milk_production_cows_per_day
 from modules.validations import is_valid_date
 
