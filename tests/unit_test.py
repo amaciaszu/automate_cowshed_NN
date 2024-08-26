@@ -15,14 +15,14 @@ class UnitTestFunctions(unittest.TestCase):
         self.assertTrue(is_valid_date("2024-08-23", "%Y-%m-%d"))
 
     def test_is_valid_date_invalid(self):
-        self.assertFalse(is_valid_date("2024-13-23"))  # Mes inválido
-        self.assertFalse(is_valid_date("23-08-2024", "%Y-%m-%d"))  # Formato inválido
-        self.assertFalse(is_valid_date("2024/08/23"))  # Separador inválido
-        self.assertFalse(is_valid_date("2024-08-32"))  # Día inválido
+        self.assertFalse(is_valid_date("2024-13-23"))  # Invalid month
+        self.assertFalse(is_valid_date("23-08-2024", "%Y-%m-%d"))  # invalid format
+        self.assertFalse(is_valid_date("2024/08/23"))  # invalid separator
+        self.assertFalse(is_valid_date("2024-08-32"))  # invalid day
 
     def test_is_valid_date_custom_format(self):
         self.assertTrue(is_valid_date("23-08-2024", "%d-%m-%Y"))
-        self.assertFalse(is_valid_date("08-23-2024", "%d-%m-%Y"))  # Formato incorrecto
+        self.assertFalse(is_valid_date("08-23-2024", "%d-%m-%Y"))  # invalid format
 
     def test_is_valid_timestamp_float_valid(self):
         self.assertTrue(is_valid_timestamp_float(1692748800.0))  # 2023-08-23 00:00:00 UTC
