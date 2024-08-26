@@ -102,7 +102,7 @@ class UnitTestFunctions(unittest.TestCase):
         mock_get_db_connection.return_value = mock_conn
         mock_conn.cursor.return_value = mock_cursor
 
-        mock_cursor.fetchone.return_value = ('16', 'L')
+        mock_cursor.fetchone.return_value = ('1', 'L')
 
         sensor = get_sensor("1")
         self.assertEqual((sensor['id'], sensor['unit']), ('1', 'L'))
